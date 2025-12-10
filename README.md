@@ -106,3 +106,50 @@
 - controlling access to resources, enforcing permissions, isolating processes, and preventing unauthorized use
 
 ---
+
+**OS Structures**
+
+**Monolithic Systems:**
+
+- single large kernel, all services inside, fast direct calls, hard to manage, one failure can crash whole system
+
+**Layered Systems:**
+
+- OS divided into layers, each depends on the one below, easier debugging, more overhead of passing info throughout layers
+
+**Microkernels:**
+
+- minimal kernel, services in user space, safer and modular, uses message passing, slower due to communication overhead
+
+**Modular Structure:**
+
+- small core kernel with loadable modules, easy to extend/replace, simpler debugging, added complexity and slight overhead
+
+**Client-Server Model:**
+
+- client process requests services from server process via message passing, can run locally or over network, often built on a microkernel
+
+**Virtual Machines:**
+
+- hypervisor creates isolated virtual systems, multiple OS share hardware, flexible but limited by physical resource capacity
+
+**Exokernels:**
+
+- kernel only handles protection/allocation, gives apps direct hardware access, no forced abstractions, extremely minimal and flexible
+
+---
+
+**System Calls:**
+
+- interface for programs to request OS services (process, memory, files, devices, protection, networking)
+- eg: fork(), read(), getpid(), pipe(), chmod()
+
+**Example (read):**
+
+- read(fd, buffer, nbytes) returns actual bytes read
+
+---
+
+**Examples of OS**
+
+- UNIX, Linux, Windows, Embedded, Android, iOS
