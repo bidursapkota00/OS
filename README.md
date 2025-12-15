@@ -7,6 +7,7 @@
 ## Table of Contents
 
 1. [Unit 1: Introduction](#introduction)
+2. [Unit 2: Process Management](#process-management)
 
 ## Introduction
 
@@ -153,3 +154,75 @@
 **Examples of OS**
 
 - UNIX, Linux, Windows, Embedded, Android, iOS
+
+---
+
+## Process Management
+
+**Process**
+
+- program in execution
+- needs CPU time, memory, files, and I/O devices
+
+**Two-State Process Model**
+
+- Running, Not Running
+
+**Five-State Process Model**
+
+- NEW, READY, RUNNING, WAITING, TERMINATED
+
+**Process Control Block (PCB)**
+
+- OS data structure that stores all process information
+- enables process control, suspension, resumption, and context switching
+
+**Components of PCB**
+
+- PID, Process State, Priority, Accounting Info, Program Counter, CPU Registers, PCB Pointers, Open Files List, I/O Status Info
+
+**Context Switching**
+
+- saving current process state to PCB and loading next process state
+- stores PC, registers, and execution context
+- loads PCB and resumes process from last instruction
+
+**Thread**
+
+- single execution sequence within a process that shares memory and resources with other threads but has its own program counter, registers, and stack, enabling faster creation and context switching than processes.
+
+**Multithreading**
+
+- multiple threads execute concurrently in one program
+- improves performance and responsiveness
+
+**User-Level Threads**
+
+- managed by thread library, not kernel
+- fast thread operations (no system calls)
+- OS treats process as single-threaded
+- blocking system call blocks entire process
+- no true parallelism
+
+**Kernel-Level Threads**
+
+- managed and scheduled by kernel
+- blocking one thread doesn’t block others
+- true parallelism on multiprocessors
+
+**Thread Mapping Models**
+
+**Many-to-One:**
+
+- many user threads → one kernel thread
+- no parallelism, blocking affects all threads
+
+**One-to-One:**
+
+- one user thread → one kernel thread
+- true parallelism, higher overhead
+
+**Many-to-Many:**
+
+- many user threads → many kernel threads
+- flexible, efficient, balanced concurrency
