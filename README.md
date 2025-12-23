@@ -226,3 +226,108 @@
 
 - many user threads → many kernel threads
 - flexible, efficient, balanced concurrency
+
+---
+
+### **Process Scheduling**
+
+- selecting which ready process runs on CPU
+- maximizes CPU utilization and throughput
+- ensures fairness and low response time
+
+---
+
+### **Schedulers**
+
+**Long-Term Scheduler:**
+
+- selects processes from disk to memory
+- controls degree of multiprogramming
+- balances CPU-bound and I/O-bound jobs
+
+**Medium-Term Scheduler:**
+
+- swaps processes out/in of memory
+- reduces memory load (only active process in memory)
+
+**Short-Term Scheduler:**
+
+- selects next process from ready queue
+- runs very frequently
+
+---
+
+### **Dispatcher**
+
+- transfers CPU control to selected process
+- performs context switching
+- loads process state from PCB
+
+---
+
+### **Scheduling Criteria**
+
+- **CPU utilization:** keep CPU busy
+- **Throughput:** processes completed per unit time
+- **Turnaround time:** submission → completion
+- **Waiting time:** time spent in ready queue
+- **Response time:** submission → first response
+- **Fairness:** equal CPU share, avoid starvation
+
+---
+
+### **Scheduling Goals**
+
+- fair CPU allocation (all systems)
+- maximize job completion rate (batch)
+- minimize turnaround time (batch)
+- minimize response time (interactive)
+- meet deadlines (real-time)
+
+---
+
+### **Preemptive Scheduling**
+
+- OS can interrupt running process
+- higher-priority process can preempt
+- improves responsiveness
+- causes context-switch overhead
+- possible starvation
+
+---
+
+### **Non-Preemptive Scheduling**
+
+- process runs until completion or blocking
+- simpler and lower overhead
+- poor response time
+- long processes may monopolize CPU
+
+---
+
+### **FCFS Scheduling**
+
+- processes execute in arrival order
+- non-preemptive
+- simple queue implementation
+- long average waiting time
+
+---
+
+### **Shortest Job First (SJF)**
+
+- shortest execution time runs first
+- optimal average waiting time
+- non-preemptive
+- needs execution time prediction
+- starvation of long jobs possible
+
+---
+
+### **Shortest Remaining Time First (SRTF)**
+
+- preemptive version of SJF
+- process with least remaining time runs
+- better response time
+- high context switching overhead
+- long processes may starve
